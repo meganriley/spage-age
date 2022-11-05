@@ -4,7 +4,7 @@
 //
 
 export const age = (name, ageInSeconds) => {
-  let earthYear = 31557600;
+  const earthYear = 31557600;
 
   const planets = {
     "mercury": 0.2408467,
@@ -16,6 +16,6 @@ export const age = (name, ageInSeconds) => {
     "uranus": 84.016846,
     "neptune": 164.79132
   }
-  let spaceAge = earthYear * planets[name]
-  return parseFloat((ageInSeconds / spaceAge).toFixed(2));
+  
+  return parseFloat((ageInSeconds / (earthYear * planets[name])).toFixed(2));
 };
